@@ -1,19 +1,18 @@
 Summary:	Reencode filenames in Nautilus
 Summary(pl.UTF-8):	Zakoduj nazwy plików w Nautilus
 Name:		nautilus-filename-repairer
-Version:	0.0.2
-Release:	0.1
+Version:	0.0.5
+Release:	1
 License:	GPL v2
 Group:		X11/Libraries
-Source0:	http://kldp.net/frs/download.php/4443/%{name}-%{version}.tar.bz2
-# Source0-md5:	b3b73deeb3a8745a90e57bc6287efba0
-URL:		http://repairer.kldp.net/
+Source0:	http://repairer.googlecode.com/files/%{name}-%{version}.tar.bz2
+# Source0-md5:	65a8ecdde7eb2aac860c40a3ffba3a31
+URL:		http://code.google.com/p/repairer/
 BuildRequires:	intltool
 BuildRequires:  gettext-devel
 BuildRequires:  gtk+2-devel >= 2.2.18
 BuildRequires:  gnome-vfs2-devel >= 2.20.1
 BuildRequires:  nautilus-devel >= 2.20.0
-#Requires:	-
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,6 +31,11 @@ nazwę pliku przez wybranie odpowiedniej opcji w menu kontekstowym.
 %setup -q
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
@@ -49,4 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%{_libdir}/nautilus/extensions-1.0/*.so
+%{_libdir}/nautilus/extensions-2.0/*.so
