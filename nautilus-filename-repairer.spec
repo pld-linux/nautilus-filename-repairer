@@ -1,12 +1,12 @@
 Summary:	Reencode filenames in Nautilus
 Summary(pl.UTF-8):	Zakoduj nazwy plików w Nautilus
 Name:		nautilus-filename-repairer
-Version:	0.0.5
+Version:	0.0.6
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
 Source0:	http://repairer.googlecode.com/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	65a8ecdde7eb2aac860c40a3ffba3a31
+# Source0-md5:	680bb6ab46687541bd6ff4fe5a16e185
 URL:		http://code.google.com/p/repairer/
 BuildRequires:	intltool
 BuildRequires:  gettext-devel
