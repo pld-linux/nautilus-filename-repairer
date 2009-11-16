@@ -8,11 +8,15 @@ Group:		X11/Libraries
 Source0:	http://repairer.googlecode.com/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	680bb6ab46687541bd6ff4fe5a16e185
 URL:		http://code.google.com/p/repairer/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	intltool
 BuildRequires:  gettext-devel
 BuildRequires:  gtk+2-devel >= 2.2.18
 BuildRequires:  gnome-vfs2-devel >= 2.20.1
+BuildRequires:	libtool
 BuildRequires:  nautilus-devel >= 2.20.0
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
