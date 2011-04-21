@@ -2,7 +2,7 @@ Summary:	Reencode filenames in Nautilus
 Summary(pl.UTF-8):	Zakoduj nazwy plików w Nautilus
 Name:		nautilus-filename-repairer
 Version:	0.0.6
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Libraries
 Source0:	http://repairer.googlecode.com/files/%{name}-%{version}.tar.bz2
@@ -10,12 +10,12 @@ Source0:	http://repairer.googlecode.com/files/%{name}-%{version}.tar.bz2
 URL:		http://code.google.com/p/repairer/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
+BuildRequires:	gnome-vfs2-devel >= 2.20.1
+BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	intltool
-BuildRequires:  gettext-devel
-BuildRequires:  gtk+2-devel >= 2.2.18
-BuildRequires:  gnome-vfs2-devel >= 2.20.1
 BuildRequires:	libtool
-BuildRequires:  nautilus-devel >= 2.20.0
+BuildRequires:	nautilus-devel >= 3.0.0
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,6 +49,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-3.0/libnautilus-filename-repairer.la
+
 %find_lang %{name}
 
 %clean
@@ -57,4 +59,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%{_libdir}/nautilus/extensions-2.0/*.so
+%{_libdir}/nautilus/extensions-3.0/*.so
