@@ -10,7 +10,7 @@ Source0:	http://repairer.googlecode.com/files/%{name}-%{version}.tar.bz2
 URL:		http://code.google.com/p/repairer/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-vfs2-devel >= 2.20.1
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	intltool
